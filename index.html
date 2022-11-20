@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombres premiers</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Nombre premier ?</h1>
+        <form>
+            <div class="input-container">
+                <label for="enter-number">Ce nombre est-il premier ?</label>
+                <input type="number" name="enter-number" id="enter-number">
+                <button class="valid"></button>
+            </div>
+            <div class="input-container">
+                <input type="checkbox" name="list-numbers" id="list-numbers">
+                <label for="list-numbers">Avoir la liste des nombres premiers jusqu'à celui-ci</label>
+            </div>
+        </form>
+        <div class="result">
+            <h2></h2>
+        </div>
+        <div class="list-container hide">
+            <p class="hide">Il y en a trop, je ne peux vous donner la liste !!</p>
+        </div>
+    </main>
+</body>
+</html>
