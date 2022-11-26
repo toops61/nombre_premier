@@ -4,8 +4,10 @@ const searchNumber = e => {
     const titleDom = container.childNodes[1];
     const numberParag = container.childNodes[3];
     numberParag.textContent = '';
+    numberParag.classList.add('hide');
     const buildPremiersResult = array => {
         titleDom.textContent = `Voici les nombres premiers jusqu'à ${numberToCheck} :`;
+        numberParag.classList.remove('hide');
         array.map((e,index) => {
             numberParag.textContent += index > 0 ? `, ${e}` : e;
         })
@@ -22,7 +24,7 @@ const searchNumber = e => {
         console.log(premierArray);
         buildPremiersResult(premierArray);
     }
-    const hideResult = () => document.querySelector('.result').classList.toggle('show');
+    //const hideResult = () => document.querySelector('.result').classList.toggle('show');
     e.preventDefault();
     let numberPremier = true;
     let diviseur = 0;
@@ -35,13 +37,13 @@ const searchNumber = e => {
             }
         }
         
-        numberToCheck < 500 ? findAllPremierNumbers(numberToCheck) : (titleDom.textContent = 'Il y en a trop, je ne peux vous donner la liste !!');
+        numberToCheck < 1000 ? findAllPremierNumbers(numberToCheck) : (titleDom.textContent = 'Il y en a trop, je ne peux vous donner la liste !!');
 
         document.querySelector('.result h2').textContent = `Le nombre ${numberToCheck} ${numberPremier ? 'est' : 'n\'est pas'} un nombre premier${numberPremier ? '.' : (', il est divisible par ' + diviseur)}`
-        hideResult();
+        /* hideResult();
         setTimeout(() => {
             hideResult();
-        }, 4000);
+        }, 4000); */
     }
     document.querySelector('input[name="list-numbers"]').addEventListener('click',e => e.target.checked ? document.querySelector('.list-container').classList.remove('hide') : document.querySelector('.list-container').classList.add('hide'));
 }
