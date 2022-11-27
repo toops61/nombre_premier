@@ -45,10 +45,10 @@ label:first-child {
     margin-right: 1em;
 }
 label:last-child {
-    margin-left: 1em;
+    margin-left: .5em;
 }
 
-.input-container {
+.input-number-container,.input-check-container {
     display: flex;
     align-items: center;
 }
@@ -56,10 +56,12 @@ label:last-child {
 .input {
     margin: 1em 0;
     display: flex;
+    font-size: 3vw;
 }
 
-input {
+.input-number-container input {
     max-width: 50vw;
+    font-size: .5em;
 }
 
 #enter-number {
@@ -68,14 +70,15 @@ input {
 }
 
 .valid {
-    padding: .2em;
+    padding: .5em;
+    font-size: 1vw;
 }
 
 .valid::before {
     content: '\f002';
     font-family: 'Font Awesome 6 solid';
     font-weight: 100;
-    font-size: 1.2em;
+    font-size: 1em;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
@@ -121,13 +124,19 @@ input {
 
 @media screen and (max-width: 900px) {
     body {
-      font-size: 3.5vw;
+        font-size: 3.5vw;
     }
     main {
         width: 90%;
     }
-    .input-container:first-child {
+    .input-number-container {
         flex-direction: column;
         align-items: flex-start;
+    }
+    .input-number-container input{
+        font-size: 1.5em;
+    }
+    .valid {
+        font-size: 100%;
     }
 }

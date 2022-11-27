@@ -44,3 +44,11 @@ const searchNumber = e => {
 }
 
 document.querySelector('.valid').addEventListener('click',searchNumber);
+
+const adaptCheckbox = () => {
+    const x = innerWidth > 1000 ? (Math.round(innerWidth / 100)) / 10 : 1;
+    document.querySelector('.input-check-container input').style.transform = `scale(${x})`
+}
+
+addEventListener('resize',adaptCheckbox);
+adaptCheckbox();
